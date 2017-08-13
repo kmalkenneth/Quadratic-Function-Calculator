@@ -22,6 +22,8 @@ public class QuadraticFunctionCalculator extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
         
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(QuadraticFunctionCalculator.class.getResource("myTheme.css").toExternalForm());
+        scene.getStylesheets().add(QuadraticFunctionCalculator.class.getResource("bootstrap3.css").toExternalForm());
         
         stage.setScene(scene);
         stage.show();

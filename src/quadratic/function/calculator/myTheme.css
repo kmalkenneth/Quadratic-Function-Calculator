@@ -1,0 +1,38 @@
+.aside {
+	-fx-background-color: rgb(43, 61, 71);
+	-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,
+		1.5);
+	-fx-padding: 12 12 12 12;
+}
+
+.background {
+	-fx-background-color: rgb(245, 245, 245);
+}
+
+.path {
+
+}
+
+.ant {
+    -fx-background-color: #a65d5d;
+}
+
+.anthill {
+	-fx-background-color: brown;
+}
+
+.empty {
+	-fx-background-color: rgb(245, 245, 245);
+}
+
+.wine {
+	-fx-background-color: red;
+}
+
+.poison {
+	-fx-background-color: green;
+}
+
+.sugar {
+	-fx-background-color: yellow;
+}

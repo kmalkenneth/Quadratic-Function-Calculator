@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quadratic.function.calculator.MainWindowController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quadratic.function.calculator.MainWindowController">
+   <left>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="240.0" styleClass="aside" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Quadratic Function Calculator" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="criterion" promptText="Criterion: ax²+bx+c" />
+            <Separator layoutX="22.0" layoutY="38.0" prefWidth="200.0" />
+            <HBox>
+               <children>
+                  <TextField fx:id="a" alignment="CENTER" layoutX="22.0" layoutY="51.0" promptText="a" styleClass="first" />
+                  <TextField fx:id="b" alignment="CENTER" layoutX="22.0" layoutY="94.0" promptText="b" styleClass="middle" />
+                  <TextField fx:id="c" alignment="CENTER" layoutX="22.0" layoutY="124.0" promptText="c" styleClass="last" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#calculate" styleClass="success" text="Calculate" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <LineChart fx:id="graph" alternativeColumnFillVisible="true" title="Graph of the function" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis fx:id="axisY" label="x" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="axisX" label="y" side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </center>
+</BorderPane>
