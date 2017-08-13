@@ -8,26 +8,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quadratic.function.calculator.MainWindowController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quadratic.function.calculator.MainWindowController">
    <left>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="240.0" styleClass="aside" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="6.0" styleClass="aside" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Quadratic Function Calculator" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Separator prefWidth="200.0" />
             <TextField fx:id="criterion" promptText="Criterion: ax²+bx+c" />
-            <Separator layoutX="22.0" layoutY="38.0" prefWidth="200.0" />
-            <HBox>
+            <HBox alignment="CENTER_RIGHT">
                <children>
-                  <TextField fx:id="a" alignment="CENTER" layoutX="22.0" layoutY="51.0" promptText="a" styleClass="first" />
-                  <TextField fx:id="b" alignment="CENTER" layoutX="22.0" layoutY="94.0" promptText="b" styleClass="middle" />
-                  <TextField fx:id="c" alignment="CENTER" layoutX="22.0" layoutY="124.0" promptText="c" styleClass="last" />
+                  <Button mnemonicParsing="false" onAction="#calculate" styleClass="success" text="Calculate" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#calculate" styleClass="success" text="Calculate" />
          </children>
       </VBox>
    </left>
@@ -41,4 +31,38 @@
         </yAxis>
       </LineChart>
    </center>
+   <right>
+      <VBox spacing="6.0" styleClass="aside">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <TextField fx:id="a" alignment="CENTER" layoutX="22.0" layoutY="51.0" prefWidth="64.0" promptText="a" styleClass="first" />
+                  <TextField fx:id="b" alignment="CENTER" layoutX="22.0" layoutY="94.0" prefWidth="64.0" promptText="b" styleClass="middle" />
+                  <TextField fx:id="c" alignment="CENTER" layoutX="22.0" layoutY="124.0" prefWidth="64.0" promptText="c" styleClass="last" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="6.0">
+               <children>
+                  <Label fx:id="concavity" text="Concavity:" textFill="WHITE" />
+                  <Label fx:id="sign" layoutX="10.0" layoutY="115.0" text="Sign:" textFill="WHITE" />
+                  <Separator prefWidth="200.0" />
+                  <Label fx:id="axisSymetry" layoutX="22.0" layoutY="137.0" text="Axis of symmetry: " textFill="WHITE" />
+                  <Label fx:id="maximumMinimum" layoutX="10.0" layoutY="70.0" text="Maximum or minimum:" textFill="WHITE" />
+                  <Label fx:id="vertex" layoutX="10.0" layoutY="55.0" text="Vertex:" textFill="WHITE" />
+                  <Label fx:id="intersectionXAxis" layoutX="10.0" layoutY="100.0" text="Intersection with the x-axis:" textFill="WHITE" wrapText="true" />
+                  <Label fx:id="intersectionYAxis" layoutX="10.0" layoutY="100.0" text="Intersection with the y-axis:" textFill="WHITE" />
+                  <Separator prefWidth="200.0" />
+                  <Label fx:id="monotony" layoutX="10.0" layoutY="160.0" text="Monotony:" textFill="WHITE" />
+                  <Label fx:id="increasing" layoutX="10.0" layoutY="25.0" text="Increasing:" textFill="WHITE" />
+                  <Label fx:id="decreasing" layoutX="10.0" layoutY="40.0" text="Decreasing:" textFill="WHITE" />
+                  <Separator prefWidth="200.0" />
+                  <Label fx:id="domain" layoutX="10.0" layoutY="130.0" text="Domain:" textFill="WHITE" />
+                  <Label fx:id="codomain" layoutX="10.0" layoutY="145.0" text="Codomain:" textFill="WHITE" />
+                  <Label fx:id="range" layoutX="10.0" layoutY="85.0" text="Range:" textFill="WHITE" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </right>
 </BorderPane>

@@ -25,8 +25,11 @@ public class QuadraticFunctionCalculator extends Application {
         scene.getStylesheets().add(QuadraticFunctionCalculator.class.getResource("myTheme.css").toExternalForm());
         scene.getStylesheets().add(QuadraticFunctionCalculator.class.getResource("bootstrap3.css").toExternalForm());
         
+        stage.setTitle("Quadratic Function Calculator");
+        
         stage.setScene(scene);
         stage.show();
+        
     }
 
     /**

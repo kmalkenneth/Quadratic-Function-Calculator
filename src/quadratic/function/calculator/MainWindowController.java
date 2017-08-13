@@ -25,6 +25,8 @@ import javafx.scene.control.TextField;
  */
 public class MainWindowController implements Initializable {
     
+    private Calculator calc;
+    
     private Label label;
     @FXML
     private TextField criterion;
@@ -40,56 +42,87 @@ public class MainWindowController implements Initializable {
     private NumberAxis axisX;
     @FXML
     private NumberAxis axisY;
-    
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+    @FXML
+    private Label concavity;    
+    @FXML
+    private Label axisSymetry;
+    @FXML
+    private Label maximumMinimum;
+    @FXML
+    private Label vertex;
+    @FXML
+    private Label sign;
+    @FXML
+    private Label intersectionXAxis;
+    @FXML
+    private Label intersectionYAxis;
+    @FXML
+    private Label monotony;
+    @FXML
+    private Label increasing;
+    @FXML
+    private Label decreasing;
+    @FXML
+    private Label range;
+    @FXML
+    private Label domain;
+    @FXML
+    private Label codomain;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        calc = new Calculator();
+        
+        a.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!a.getText().equals("") && !a.getText().equals("-")) {
+                calc.setA(Double.parseDouble(a.getText()));
+            }
+        });
+        
+        b.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!b.getText().equals("") && !b.getText().equals("-")) {
+                calc.setB(Double.parseDouble(b.getText()));
+            }
+        });
+        
+        c.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!c.getText().equals("") && !c.getText().equals("-")) {
+                calc.setC(Double.parseDouble(c.getText()));
+            }
+        });
     }    
 
     @FXML
     private void calculate(ActionEvent event) {
         
-        int grado = 2;
-        pintarGrafica(Double.parseDouble(a.getText()), Double.parseDouble(b.getText()), Double.parseDouble(c.getText()), -1, 6, grado);
-    }
-    
-    /**
-     * Método para pintar la gráfica
-     * @param min
-     * @param max
-     * @param grado 
-     */
-    private void pintarGrafica (double a, double b, double c, double min, double max, int grado){
-
-        // Creamos un ObservableList para guardar los puntos que pintaremos en la gráfica
-        ObservableList<XYChart.Series<Double, Double>> lineChartData = FXCollections.observableArrayList();
-
-        // Instanciamos un punto a pintar
-        LineChart.Series<Double, Double> series = new LineChart.Series<Double, Double>();
-
-        // Imprimimos la función que vamos a pintar
-        series.setName("f(x^"+grado+")");
-
-        // obtenemos los puntos a pintar. Daros cuenta que los puntos a pintar estan definidos
-        // por el valor de 'x' y el resultado de 'f(x)', siendo f(x)=Math.pow(x, grado) = x^grado
-        for (double i = min; i<max; i=i+0.1){ //ax2+bx+c
-            series.getData().add(new XYChart.Data<Double, Double>(i, a * Math.pow(i, grado) + b * i + c));
-            System.out.println("(" + i + "," + Math.pow(i, grado) + ")");
-        }
-
-        // Guardamos todos los puntos de la función que hemos obtenido
-        lineChartData.add(series);
-
-        // Si No quereis que se pinten los puntos, poner a false
-        graph.setCreateSymbols(true);
-
-        // Ponemos los puntos en la gráfica
-        graph.setData(lineChartData);
+        concavity.setText("Concavity: " + calc.getConcavity());
+        
+        sign.setText("Sign: " + calc.getSign());
+        
+        axisSymetry.setText("Axis of symmetry: (" + calc.getAxisSymmetry() + " , 0)");
+        
+        maximumMinimum.setText("Maximum or minimum: (0 , " + calc.getMaximumminimum() + ")");
+         
+        vertex.setText("Vertex: (" + calc.getAxisSymmetry() + " , " + calc.getMaximumminimum() + ")");
+        
+        intersectionXAxis.setText("Intersection with the x-axis: (" + calc.getIntersectionXAxis1() + " , 0) (" + calc.getIntersectionXAxis2() + " , 0)" );
+        intersectionYAxis.setText("Intersection with the y-axis: (0 , " + calc.getIntersectionYAxis() + ")" );
+        
+        monotony.setText("Monotony: " + calc.getMonotony());
+        
+        increasing.setText("Increasing: " + calc.getIncreasing());
+        decreasing.setText("Decreasing: " + calc.getDecreasing());
+        
+        range.setText("Range: " + calc.getRange());
+        
+        domain.setText("Domain: R");
+        codomain.setText("Codomain: R");
+        
+        //To graph
+        graph.setCreateSymbols(false);        
+        graph.setData(calc.calcSeriesGraph());
         graph.createSymbolsProperty();
     }
 }
