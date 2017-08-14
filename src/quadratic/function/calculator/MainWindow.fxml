@@ -10,14 +10,40 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quadratic.function.calculator.MainWindowController">
    <left>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="6.0" styleClass="aside" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0" styleClass="aside" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="criterion" promptText="Criterion: ax²+bx+c" />
-            <HBox alignment="CENTER_RIGHT">
+            <TextField fx:id="criterion" alignment="CENTER_RIGHT" focusTraversable="false" promptText="Criterion: ax²+bx+c">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <GridPane gridLinesVisible="true" hgap="6.0" prefWidth="228.0" vgap="6.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#calculate" styleClass="success" text="Calculate" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clear" styleClass="danger" text="C" textFill="WHITE" />
+                  <Button layoutX="10.0" layoutY="46.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#divide" text="÷" GridPane.rowIndex="1" />
+                  <Button layoutX="10.0" layoutY="46.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#multiply" text="×" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button layoutX="10.0" layoutY="46.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#less" text="−" GridPane.rowIndex="2" />
+                  <Button layoutX="10.0" layoutY="46.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#plus" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button layoutX="68.0" layoutY="154.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#calculate" styleClass="info" text="=" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Button layoutX="68.0" layoutY="154.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#x2" text="x²" GridPane.columnIndex="1" />
+                  <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#x1" text="x¹" GridPane.columnIndex="2" />
+                  <Button layoutX="126.0" layoutY="82.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#fraction" text="½" GridPane.rowIndex="3" />
+                  <Button layoutX="126.0" layoutY="82.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#root" text="√" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button layoutX="68.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#initGrup" text="(" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button layoutX="126.0" layoutY="46.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#finallyGrup" text=")" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                </children>
-            </HBox>
+            </GridPane>
          </children>
       </VBox>
    </left>
