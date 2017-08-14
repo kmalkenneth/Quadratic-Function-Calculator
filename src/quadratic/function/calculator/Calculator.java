@@ -25,16 +25,25 @@ public class Calculator {
     private double intersectionXAxis1;
     private double intersectionXAxis2;
     private double intersectionYAxis;
+    private double discriminating;
     
     private String concavity;
     private String monotony;
     private String increasing;
     private String decreasing;
     private String range;
+    private String criterium;
     
     private char sign;
 
     public Calculator() {
+    }
+    
+    public boolean calcDiscriminating() {
+    
+        discriminating = ((Math.pow(b, 2)-4*a*c));
+        
+        return discriminating >=0;
     }
         
     public void calcConcavity(){
@@ -71,15 +80,11 @@ public class Calculator {
     }
     
     public void calcX1() {
-    
-        double discriminating = ((Math.pow(b, 2)-4*a*c));
         
         intersectionXAxis1 = ((-(b) + Math.sqrt(discriminating))/2*a);
     }
     
     public void calcX2() {
-    
-        double discriminating = ((Math.pow(b, 2)-4*a*c));
         
         intersectionXAxis2 = ((-(b) - Math.sqrt(discriminating))/2*a);
     }
@@ -159,7 +164,7 @@ public class Calculator {
         LineChart.Series<Double, Double> series = new LineChart.Series<Double, Double>();
 
         // Imprimimos la función que vamos a pintar
-        series.setName("f(x^2)");
+        series.setName("f(x)= " + criterium);
 
         // obtenemos los puntos a pintar. Daros cuenta que los puntos a pintar estan definidos
         // por el valor de 'x' y el resultado de 'f(x)', siendo f(x)=Math.pow(x, grado) = x^grado
@@ -294,6 +299,22 @@ public class Calculator {
 
     public void setRange(String range) {
         this.range = range;
+    }
+
+    public double getDiscriminating() {
+        return discriminating;
+    }
+
+    public void setDiscriminating(double discriminating) {
+        this.discriminating = discriminating;
+    }
+
+    public String getCriterium() {
+        return criterium;
+    }
+
+    public void setCriterium(String criterium) {
+        this.criterium = criterium;
     }
     
 }
