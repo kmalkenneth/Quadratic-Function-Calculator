@@ -6,6 +6,7 @@
 package quadratic.function.calculator;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,6 +27,8 @@ import org.controlsfx.control.textfield.TextFields;
 public class MainWindowController implements Initializable {
     
     private Calculator calc;
+    
+    private DecimalFormat df;
     
     @FXML
     private TextField criterion;
@@ -73,6 +76,8 @@ public class MainWindowController implements Initializable {
         // TODO
         
         calc = new Calculator();
+        
+        df = new DecimalFormat("#.00");
         
         TextFields.bindAutoCompletion(criterion,"x²", "x¹");        
         
@@ -217,21 +222,21 @@ public class MainWindowController implements Initializable {
         
         sign.setText("Sign: " + calc.getSign());
         
-        axisSymetry.setText("Axis of symmetry: (" + calc.getAxisSymmetry() + " , 0)");
+        axisSymetry.setText("Axis of symmetry: (" + df.format(calc.getAxisSymmetry()) + " , 0)");
         
-        maximumMinimum.setText("Maximum or minimum: (0 , " + calc.getMaximumminimum() + ")");
+        maximumMinimum.setText("Maximum or minimum: (0 , " + df.format(calc.getMaximumminimum()) + ")");
          
-        vertex.setText("Vertex: (" + calc.getAxisSymmetry() + " , " + calc.getMaximumminimum() + ")");
+        vertex.setText("Vertex: (" + df.format(calc.getAxisSymmetry()) + " , " + df.format(calc.getMaximumminimum()) + ")");
         
-        intersectionXAxis.setText("Intersection with the x-axis: (" + calc.getIntersectionXAxis1() + " , 0) (" + calc.getIntersectionXAxis2() + " , 0)" );
-        intersectionYAxis.setText("Intersection with the y-axis: (0 , " + calc.getIntersectionYAxis() + ")" );
+        intersectionXAxis.setText("Intersection with the x-axis: (" + df.format(calc.getIntersectionXAxis1()) + " , 0) (" + df.format(calc.getIntersectionXAxis2()) + " , 0)" );
+        intersectionYAxis.setText("Intersection with the y-axis: (0 , " + df.format(calc.getIntersectionYAxis()) + ")" );
         
         monotony.setText("Monotony: " + calc.getMonotony());
         
         increasing.setText("Increasing: " + calc.getIncreasing());
         decreasing.setText("Decreasing: " + calc.getDecreasing());
         
-        range.setText("Range: " + calc.getRange());
+        range.setText("Range:  " + calc.getRange());
         
         domain.setText("Domain: R");
         codomain.setText("Codomain: R");

@@ -5,6 +5,7 @@
  */
 package quadratic.function.calculator;
 
+import java.text.DecimalFormat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.LineChart;
@@ -35,8 +36,11 @@ public class Calculator {
     private String criterium;
     
     private char sign;
+    
+    private DecimalFormat df;
 
     public Calculator() {
+        df = new DecimalFormat("#.00");
     }
     
     public boolean calcDiscriminating() {
@@ -131,10 +135,10 @@ public class Calculator {
     
         if (a > 0) {
         
-            range = "]" + maximumminimum + " , +∞[";
+            range = "]" + df.format(maximumminimum) + " , +∞[";
         } else if (a < 0) {
         
-            range = "]-∞ , " + maximumminimum + "[";
+            range = "]-∞ , " + df.format(maximumminimum) + "[";
         }
     }
 

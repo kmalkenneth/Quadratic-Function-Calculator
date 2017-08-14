@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -26,6 +27,7 @@ public class QuadraticFunctionCalculator extends Application {
         scene.getStylesheets().add(QuadraticFunctionCalculator.class.getResource("bootstrap3.css").toExternalForm());
         
         stage.setTitle("Quadratic Function Calculator");
+        stage.getIcons().add(new Image("quadratic/function/calculator/accessories-calculator.png"));
         
         stage.setScene(scene);
         stage.show();
