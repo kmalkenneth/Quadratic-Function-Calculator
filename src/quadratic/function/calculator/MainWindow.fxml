@@ -26,9 +26,9 @@
             <Separator prefWidth="200.0" />
             <HBox alignment="CENTER">
                <children>
-                  <TextField fx:id="a" alignment="CENTER" editable="false" layoutX="22.0" layoutY="51.0" maxWidth="1.7976931348623157E308" prefWidth="64.0" promptText="a" styleClass="first" />
-                  <TextField fx:id="b" alignment="CENTER" editable="false" layoutX="22.0" layoutY="94.0" maxWidth="1.7976931348623157E308" prefWidth="64.0" promptText="b" styleClass="middle" />
-                  <TextField fx:id="c" alignment="CENTER" editable="false" layoutX="22.0" layoutY="124.0" maxWidth="1.7976931348623157E308" prefWidth="64.0" promptText="c" styleClass="last" />
+                  <TextField fx:id="a" alignment="CENTER" editable="false" focusTraversable="false" layoutX="22.0" layoutY="51.0" maxWidth="1.7976931348623157E308" prefWidth="64.0" promptText="a" styleClass="first" />
+                  <TextField fx:id="b" alignment="CENTER" editable="false" focusTraversable="false" layoutX="22.0" layoutY="94.0" maxWidth="1.7976931348623157E308" prefWidth="64.0" promptText="b" styleClass="middle" />
+                  <TextField fx:id="c" alignment="CENTER" editable="false" focusTraversable="false" layoutX="22.0" layoutY="124.0" maxWidth="1.7976931348623157E308" prefWidth="64.0" promptText="c" styleClass="last" />
                </children>
             </HBox>
             <Separator prefWidth="200.0" />

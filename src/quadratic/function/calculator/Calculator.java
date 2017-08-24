@@ -113,10 +113,10 @@ public class Calculator {
     
         if (a > 0) {
         
-            decreasing = "]-∞ ," + axisSymmetry + "[";
+            decreasing = "(-∞ ," + axisSymmetry + "]";
         } else if (a < 0) {
         
-            decreasing = "]" + axisSymmetry + " , +∞[";
+            decreasing = "[" + axisSymmetry + " , +∞)";
         }
     }
     
@@ -124,10 +124,10 @@ public class Calculator {
     
         if (a > 0) {
         
-            increasing = "]" + axisSymmetry + " , +∞[";
+            increasing = "[" + axisSymmetry + " , +∞)";
         } else if (a < 0) {
         
-            increasing = "]-∞ , " + axisSymmetry + "[";
+            increasing = "(-∞ , " + axisSymmetry + "]";
         }
     }
     
@@ -135,10 +135,10 @@ public class Calculator {
     
         if (a > 0) {
         
-            range = "]" + df.format(maximumminimum) + " , +∞[";
+            range = "[" + df.format(maximumminimum) + " , +∞)";
         } else if (a < 0) {
         
-            range = "]-∞ , " + df.format(maximumminimum) + "[";
+            range = "(-∞ , " + df.format(maximumminimum) + "]";
         }
     }
 
